@@ -23,7 +23,7 @@ class NodeRtmpServer {
   }
 
   run() {
-    this.tcpServer.listen(this.port, () => {
+    this.tcpServer.listen(this.port,"0.0.0.0", () => { // for ffmpeg error cannot connect to IPv6 tcp6 !
       Logger.log(`Node Media Rtmp Server started on port: ${this.port}`);
     });
 
